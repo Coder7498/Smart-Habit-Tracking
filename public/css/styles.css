@@ -1,0 +1,171 @@
+:root {
+    --primary-color: #6c5ce7;
+    --primary-hover: #5649b9;
+    --secondary-color: #a29bfe;
+    --background-bg: #dfe6e9;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --text-color: #2d3436;
+    --success-color: #00b894;
+    --font-main: 'Inter', sans-serif;
+    --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    font-family: var(--font-main);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-sm) !important;
+}
+
+.navbar-brand {
+    color: var(--primary-color) !important;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.btn-light {
+    color: var(--primary-color);
+    background: rgba(108, 92, 231, 0.1);
+    border: none;
+    font-weight: 600;
+}
+
+.btn-light:hover {
+    background: rgba(108, 92, 231, 0.2);
+    color: var(--primary-hover);
+}
+
+/* Auth Container */
+.auth-container {
+    max-width: 420px;
+    margin: 100px auto;
+    padding: 40px;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.auth-container h2 {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(108, 92, 231, 0.4);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(108, 92, 231, 0.6);
+}
+
+/* Forms */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid #dfe6e9;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.form-control:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(162, 155, 254, 0.25);
+}
+
+/* Cards */
+.card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-title {
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+/* Habit Card Specifics */
+.habit-card {
+    cursor: pointer;
+}
+
+.progress {
+    height: 8px;
+    border-radius: 10px;
+    background-color: #dfe6e9;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: var(--primary-color);
+}
+
+/* Check Button */
+.check-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #e2e8f0;
+    color: #cbd5e0;
+    background: white;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1.2rem;
+}
+
+.check-btn:hover {
+    border-color: var(--success-color);
+    color: var(--success-color);
+    background: rgba(0, 184, 148, 0.1);
+}
+
+.check-btn.completed {
+    background: var(--success-color);
+    border-color: var(--success-color);
+    color: white;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 184, 148, 0.4);
+}
+
+/* Modal */
+.modal-content {
+    border-radius: 20px;
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.modal-header {
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+.modal-footer {
+    border-top: none;
+}
