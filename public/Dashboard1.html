@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Habit Tracker - Dashboard</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Smart Habits</a>
+            <div class="d-flex align-items-center">
+                <span id="welcomeMsg" class="text-dark fw-semibold me-3"></span>
+                <button class="btn btn-light btn-sm" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container py-5">
+        <!-- Stats Section -->
+        <div class="row mb-5">
+            <div class="col-md-8 offset-md-2">
+                <div class="card border-0 shadow-sm p-3">
+                    <h5 class="card-title text-center text-muted mb-3">Your Weekly Progress</h5>
+                    <canvas id="progressChart" style="max-height: 250px;"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habits Header -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="fw-bold text-dark">Your Habits</h3>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHabitModal">
+                + Add New Habit
+            </button>
+        </div>
+
+        <!-- Habits Grid -->
+        <div id="habitsContainer" class="row">
+            <!-- Habit Cards Injected Here -->
+            <p class="text-center text-muted">Loading habits...</p>
+        </div>
+    </div>
+
+
+    <!--Add Habit Modal-->
+    
+    <div class="modal fade" id="addHabitModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Create New Habit</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="addHabitForm">
+                        <div class="mb-3">
+                            <label class="form-label">Habit Title</label>
+                            <input type="text" class="form-control" id="habitTitle" placeholder="e.g., Read 30 mins"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Frequency</label>
+                            <select class="form-select" id="habitFrequency">
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Target Days (Goal)</label>
+                            <input type="number" class="form-control" id="habitTarget" value="21">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveHabitBtn">Save Habit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/charts.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
